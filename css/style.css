@@ -409,37 +409,7 @@ a { color: inherit; }
   .passo__titulo { align-self: start; }
 }
 
-/* 6. Sobre --------------------------------------------------------------- */
-.sobre__texto {
-  display: grid;
-  gap: 20px;
-  max-width: 40rem;
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-  border-left: 4px solid var(--amarelo);
-  padding-left: clamp(20px, 3vw, 32px);
-}
-
-@media (min-width: 1000px) {
-  .sobre {
-    display: grid;
-    grid-template-columns: 5fr 7fr;
-    gap: 64px;
-    align-items: start;
-  }
-  .sobre .secao__topo { margin-bottom: 0; }
-}
-
-/* Marcador visual para textos que ainda precisam ser revisados.
-   Remova a classe "a-revisar" quando o texto definitivo entrar. */
-.a-revisar {
-  background: var(--branco);
-  outline: 1px dashed var(--preto);
-  padding: 0 4px;
-  font-family: ui-monospace, Consolas, monospace;
-  font-size: .85em;
-}
-
-/* 7. Contato (bloco preto) ----------------------------------------------- */
+/* 6. Contato (bloco preto) ----------------------------------------------- */
 .contato {
   background: var(--preto);
   color: var(--branco);
@@ -490,7 +460,7 @@ a { color: inherit; }
   .contato__grade { grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
 }
 
-/* 8. Rodapé -------------------------------------------------------------- */
+/* 7. Rodapé -------------------------------------------------------------- */
 .rodape {
   border-top: 6px solid var(--amarelo);
   padding: 28px 0;
