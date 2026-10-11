@@ -81,8 +81,8 @@ a { color: inherit; }
 }
 .botao:hover { transform: translateY(-2px); }
 
-.botao--cor-destaque { background: var(--cor-destaque); color: var(--cor-texto); }
-.botao--cor-destaque:hover { background: var(--cor-texto); color: var(--cor-destaque); }
+.botao--amarelo { background: var(--cor-destaque); color: var(--cor-texto); }
+.botao--amarelo:hover { background: var(--cor-texto); color: var(--cor-destaque); }
 
 .botao--contorno { background: transparent; color: var(--cor-texto); }
 .botao--contorno:hover { background: var(--cor-texto); color: var(--cor-fundo); }
