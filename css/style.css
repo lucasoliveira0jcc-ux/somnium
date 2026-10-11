@@ -357,3 +357,54 @@ a { color: inherit; }
   box-shadow: 4px 4px 0 var(--preto);
 }
 .projeto--publicada:hover .projeto__acao { background: var(--amarelo); }
+
+/* 5. Como funciona ------------------------------------------------------- */
+.passos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: passo;
+  display: grid;
+}
+
+.passo {
+  counter-increment: passo;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  column-gap: 16px;
+  row-gap: 8px;
+  padding: 28px 0;
+  border-top: 1px solid var(--cinza-linha);
+}
+.passo:first-child { border-top: 2px solid var(--preto); }
+
+.passo::before {
+  content: counter(passo, decimal-leading-zero);
+  grid-row: span 2;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.passo__titulo { font-size: 1.4rem; align-self: end; }
+.passo p { color: var(--cinza-texto); }
+
+@media (min-width: 1000px) {
+  .passos { grid-template-columns: repeat(5, 1fr); }
+  .passo,
+  .passo:first-child {
+    grid-template-columns: 1fr;
+    align-content: start;
+    padding: 0 28px 0 0;
+    border-top: 0;
+  }
+  .passo::before {
+    grid-row: auto;
+    font-size: 3rem;
+    padding: 24px 0 28px;
+    margin-bottom: 8px;
+    border-top: 2px solid var(--preto);
+  }
+  .passo__titulo { align-self: start; }
+}
