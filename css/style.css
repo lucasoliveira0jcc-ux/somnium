@@ -2,18 +2,9 @@
    SOMNIUM | estilos
    ========================================================================== */
 
-/* Cores e medidas -------------------------------------------------------- */
+/* Medidas ----------------------------------------------------------------
+   Cores e fontes ficam em css/tokens.css. Este arquivo usa só as variáveis. */
 :root {
-  --amarelo: #FFD400;   /* destaque: botões, faixas, fundos com texto preto */
-  --preto: #111111;     /* textos e blocos de contraste */
-  --branco: #FFFFFF;    /* fundo principal */
-  --cinza: #F4F4F1;     /* fundo das seções secundárias */
-  --cinza-linha: #DADAD4;
-  --cinza-texto: #55554F;
-
-  --fonte-titulo: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --fonte-texto: "Inter", "Helvetica Neue", Arial, sans-serif;
-
   --largura: 1200px;
   --margem: 20px;
   --secao: clamp(72px, 10vw, 136px);
@@ -28,8 +19,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
 body {
   margin: 0;
-  background: var(--branco);
-  color: var(--preto);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
   font-family: var(--fonte-texto);
   font-size: 17px;
   line-height: 1.6;
@@ -51,7 +42,7 @@ p { margin: 0; }
 
 a { color: inherit; }
 
-:focus-visible { outline: 3px solid var(--preto); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--cor-texto); outline-offset: 3px; }
 
 .container {
   width: 100%;
@@ -68,7 +59,7 @@ a { color: inherit; }
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--amarelo);
+  background: var(--cor-destaque);
   padding: 12px 16px;
   font-weight: 600;
   z-index: 100;
@@ -81,7 +72,7 @@ a { color: inherit; }
 .botao {
   display: inline-block;
   padding: 16px 28px;
-  border: 2px solid var(--preto);
+  border: 2px solid var(--cor-texto);
   font-family: var(--fonte-titulo);
   font-weight: 700;
   font-size: 1rem;
@@ -90,15 +81,15 @@ a { color: inherit; }
 }
 .botao:hover { transform: translateY(-2px); }
 
-.botao--amarelo { background: var(--amarelo); color: var(--preto); }
-.botao--amarelo:hover { background: var(--preto); color: var(--amarelo); }
+.botao--cor-destaque { background: var(--cor-destaque); color: var(--cor-texto); }
+.botao--cor-destaque:hover { background: var(--cor-texto); color: var(--cor-destaque); }
 
-.botao--contorno { background: transparent; color: var(--preto); }
-.botao--contorno:hover { background: var(--preto); color: var(--branco); }
+.botao--contorno { background: transparent; color: var(--cor-texto); }
+.botao--contorno:hover { background: var(--cor-texto); color: var(--cor-fundo); }
 
 /* Destaque amarelo: só em títulos grandes, com texto preto por cima */
 .destaque {
-  background: var(--amarelo);
+  background: var(--cor-destaque);
   padding: 0 .12em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
@@ -109,8 +100,8 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--branco);
-  border-bottom: 1px solid var(--cinza-linha);
+  background: var(--cor-fundo);
+  border-bottom: 1px solid var(--cor-linha);
 }
 
 .cabecalho__linha {
@@ -135,7 +126,7 @@ a { color: inherit; }
 }
 .logo__sub {
   font-size: .8rem;
-  color: var(--cinza-texto);
+  color: var(--cor-texto-suave);
   white-space: nowrap;
 }
 
@@ -148,7 +139,7 @@ a { color: inherit; }
   background: none;
   border: 0;
   font: 600 .95rem var(--fonte-texto);
-  color: var(--preto);
+  color: var(--cor-texto);
   cursor: pointer;
 }
 .menu-botao__icone,
@@ -156,7 +147,7 @@ a { color: inherit; }
   display: block;
   width: 20px;
   height: 2px;
-  background: var(--preto);
+  background: var(--cor-texto);
   transition: transform .2s;
 }
 .menu-botao__icone { position: relative; transform: translateY(-3px); }
@@ -177,17 +168,17 @@ a { color: inherit; }
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--branco);
-    border-bottom: 2px solid var(--preto);
+    background: var(--cor-fundo);
+    border-bottom: 2px solid var(--cor-texto);
   }
   .menu.aberto { display: block; }
-  .menu li { border-top: 1px solid var(--cinza-linha); }
+  .menu li { border-top: 1px solid var(--cor-linha); }
   .menu a {
     display: block;
     padding: 16px var(--margem);
     font-size: 1.1rem;
   }
-  .menu a:hover { background: var(--amarelo); }
+  .menu a:hover { background: var(--cor-destaque); }
   .logo__sub { font-size: .75rem; }
 }
 
@@ -198,7 +189,7 @@ a { color: inherit; }
     padding: 6px 0;
     border-bottom: 2px solid transparent;
   }
-  .menu a:hover { border-bottom-color: var(--preto); }
+  .menu a:hover { border-bottom-color: var(--cor-texto); }
 }
 
 /* 2. Apresentação -------------------------------------------------------- */
@@ -215,12 +206,12 @@ a { color: inherit; }
   margin: 32px 0 40px;
   max-width: 34rem;
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-  color: var(--cinza-texto);
+  color: var(--cor-texto-suave);
 }
 
 /* Seções (estrutura comum) ----------------------------------------------- */
 .secao { padding: var(--secao) 0; }
-.secao--cinza { background: var(--cinza); }
+.secao--cinza { background: var(--cor-secundaria); }
 
 .secao__topo {
   display: grid;
@@ -239,7 +230,7 @@ a { color: inherit; }
 
 .secao__intro {
   max-width: 36rem;
-  color: var(--cinza-texto);
+  color: var(--cor-texto-suave);
   font-size: 1.05rem;
 }
 
@@ -249,12 +240,12 @@ a { color: inherit; }
   margin: 0;
   padding: 0;
   display: grid;
-  border-top: 2px solid var(--preto);
+  border-top: 2px solid var(--cor-texto);
 }
 
 .servico {
   padding: 32px 0 36px;
-  border-bottom: 1px solid var(--cinza-linha);
+  border-bottom: 1px solid var(--cor-linha);
 }
 
 .servico__titulo {
@@ -262,7 +253,7 @@ a { color: inherit; }
   margin-bottom: 14px;
 }
 
-.servico p { color: var(--cinza-texto); max-width: 30rem; }
+.servico p { color: var(--cor-texto-suave); max-width: 30rem; }
 
 @media (min-width: 700px) {
   .servicos { grid-template-columns: 1fr 1fr; }
@@ -270,7 +261,7 @@ a { color: inherit; }
   .servico:nth-child(even) {
     padding-left: 40px;
     padding-right: 0;
-    border-left: 1px solid var(--cinza-linha);
+    border-left: 1px solid var(--cor-linha);
   }
 }
 
@@ -288,8 +279,8 @@ a { color: inherit; }
 }
 
 .projeto {
-  background: var(--branco);
-  border: 2px solid var(--preto);
+  background: var(--cor-fundo);
+  border: 2px solid var(--cor-texto);
   display: flex;
   flex-direction: column;
 }
@@ -305,8 +296,8 @@ a { color: inherit; }
   aspect-ratio: 8 / 5;
   width: 100%;
   object-fit: cover;
-  border-bottom: 2px solid var(--preto);
-  background: var(--cinza);
+  border-bottom: 2px solid var(--cor-texto);
+  background: var(--cor-secundaria);
 }
 
 .projeto__corpo {
@@ -318,11 +309,11 @@ a { color: inherit; }
 
 .projeto__titulo { font-size: 1.6rem; }
 
-.projeto__descricao { color: var(--cinza-texto); }
+.projeto__descricao { color: var(--cor-texto-suave); }
 
 .projeto__legenda {
   font-size: .85rem;
-  color: var(--cinza-texto);
+  color: var(--cor-texto-suave);
 }
 
 .projeto__rodape {
@@ -337,8 +328,8 @@ a { color: inherit; }
 .projeto__estado {
   display: inline-block;
   padding: 4px 10px;
-  background: var(--preto);
-  color: var(--branco);
+  background: var(--cor-texto);
+  color: var(--cor-fundo);
   font-size: .8rem;
   font-weight: 600;
   letter-spacing: .04em;
@@ -348,15 +339,15 @@ a { color: inherit; }
 .projeto__acao {
   font-family: var(--fonte-titulo);
   font-weight: 700;
-  border-bottom: 2px solid var(--preto);
+  border-bottom: 2px solid var(--cor-texto);
 }
 
 .projeto--publicada { transition: transform .15s, box-shadow .15s; }
 .projeto--publicada:hover {
   transform: translate(-4px, -4px);
-  box-shadow: 4px 4px 0 var(--preto);
+  box-shadow: 4px 4px 0 var(--cor-texto);
 }
-.projeto--publicada:hover .projeto__acao { background: var(--amarelo); }
+.projeto--publicada:hover .projeto__acao { background: var(--cor-destaque); }
 
 /* 5. Como funciona ------------------------------------------------------- */
 .passos {
@@ -374,9 +365,9 @@ a { color: inherit; }
   column-gap: 16px;
   row-gap: 8px;
   padding: 28px 0;
-  border-top: 1px solid var(--cinza-linha);
+  border-top: 1px solid var(--cor-linha);
 }
-.passo:first-child { border-top: 2px solid var(--preto); }
+.passo:first-child { border-top: 2px solid var(--cor-texto); }
 
 .passo::before {
   content: counter(passo, decimal-leading-zero);
@@ -388,7 +379,7 @@ a { color: inherit; }
 }
 
 .passo__titulo { font-size: 1.4rem; align-self: end; }
-.passo p { color: var(--cinza-texto); }
+.passo p { color: var(--cor-texto-suave); }
 
 @media (min-width: 1000px) {
   .passos { grid-template-columns: repeat(5, 1fr); }
@@ -404,15 +395,15 @@ a { color: inherit; }
     font-size: 3rem;
     padding: 24px 0 28px;
     margin-bottom: 8px;
-    border-top: 2px solid var(--preto);
+    border-top: 2px solid var(--cor-texto);
   }
   .passo__titulo { align-self: start; }
 }
 
 /* 6. Contato (bloco preto) ----------------------------------------------- */
 .contato {
-  background: var(--preto);
-  color: var(--branco);
+  background: var(--cor-texto);
+  color: var(--cor-fundo);
   padding: var(--secao) 0;
 }
 
@@ -423,7 +414,7 @@ a { color: inherit; }
 .contato__texto {
   margin-top: 24px;
   max-width: 32rem;
-  color: #CFCFC8;
+  color: var(--cor-inverso-texto-suave);
   font-size: 1.1rem;
 }
 
@@ -433,28 +424,28 @@ a { color: inherit; }
   justify-self: start;
   font-size: 1.15rem;
   padding: 20px 32px;
-  border-color: var(--amarelo);
+  border-color: var(--cor-destaque);
 }
-.contato__whatsapp:hover { background: var(--branco); color: var(--preto); border-color: var(--branco); }
+.contato__whatsapp:hover { background: var(--cor-fundo); color: var(--cor-texto); border-color: var(--cor-fundo); }
 
 /* Botão sem link enquanto o número não for informado */
 .botao--pendente { cursor: default; }
-.botao--pendente:hover { transform: none; background: var(--amarelo); color: var(--preto); border-color: var(--amarelo); }
+.botao--pendente:hover { transform: none; background: var(--cor-destaque); color: var(--cor-texto); border-color: var(--cor-destaque); }
 
-.contato__lista { margin: 0; display: grid; gap: 0; border-top: 1px solid #3A3A36; }
+.contato__lista { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--cor-inverso-linha); }
 .contato__lista > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 4px 16px;
   padding: 18px 0;
-  border-bottom: 1px solid #3A3A36;
+  border-bottom: 1px solid var(--cor-inverso-linha);
 }
-.contato__lista dt { color: #A8A8A0; }
+.contato__lista dt { color: var(--cor-inverso-rotulo); }
 .contato__lista dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
-.contato__lista a[href] { text-decoration-color: var(--amarelo); text-underline-offset: 4px; }
-.contato__lista a[href]:hover { color: var(--amarelo); }
-.contato :focus-visible { outline-color: var(--amarelo); }
+.contato__lista a[href] { text-decoration-color: var(--cor-destaque); text-underline-offset: 4px; }
+.contato__lista a[href]:hover { color: var(--cor-destaque); }
+.contato :focus-visible { outline-color: var(--cor-destaque); }
 
 @media (min-width: 900px) {
   .contato__grade { grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
@@ -462,7 +453,7 @@ a { color: inherit; }
 
 /* 7. Rodapé -------------------------------------------------------------- */
 .rodape {
-  border-top: 6px solid var(--amarelo);
+  border-top: 6px solid var(--cor-destaque);
   padding: 28px 0;
   font-size: .95rem;
 }
