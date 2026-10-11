@@ -1,0 +1,219 @@
+/* ==========================================================================
+   SOMNIUM | estilos
+   ========================================================================== */
+
+/* Cores e medidas -------------------------------------------------------- */
+:root {
+  --amarelo: #FFD400;   /* destaque: botões, faixas, fundos com texto preto */
+  --preto: #111111;     /* textos e blocos de contraste */
+  --branco: #FFFFFF;    /* fundo principal */
+  --cinza: #F4F4F1;     /* fundo das seções secundárias */
+  --cinza-linha: #DADAD4;
+  --cinza-texto: #55554F;
+
+  --fonte-titulo: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --fonte-texto: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --largura: 1200px;
+  --margem: 20px;
+  --secao: clamp(72px, 10vw, 136px);
+}
+
+/* Base ------------------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  margin: 0;
+  background: var(--branco);
+  color: var(--preto);
+  font-family: var(--fonte-texto);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+a { color: inherit; }
+
+:focus-visible { outline: 3px solid var(--preto); outline-offset: 3px; }
+
+.container {
+  width: 100%;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 var(--margem);
+}
+
+@media (min-width: 768px) {
+  :root { --margem: 40px; }
+}
+
+.pular {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--amarelo);
+  padding: 12px 16px;
+  font-weight: 600;
+  z-index: 100;
+}
+.pular:focus { left: 16px; top: 16px; }
+
+/* Botões ----------------------------------------------------------------- */
+.botoes { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.botao {
+  display: inline-block;
+  padding: 16px 28px;
+  border: 2px solid var(--preto);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color .15s, color .15s, transform .15s;
+}
+.botao:hover { transform: translateY(-2px); }
+
+.botao--amarelo { background: var(--amarelo); color: var(--preto); }
+.botao--amarelo:hover { background: var(--preto); color: var(--amarelo); }
+
+.botao--contorno { background: transparent; color: var(--preto); }
+.botao--contorno:hover { background: var(--preto); color: var(--branco); }
+
+/* Destaque amarelo: só em títulos grandes, com texto preto por cima */
+.destaque {
+  background: var(--amarelo);
+  padding: 0 .12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* 1. Cabeçalho ----------------------------------------------------------- */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--branco);
+  border-bottom: 1px solid var(--cinza-linha);
+}
+
+.cabecalho__linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo__nome {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.logo__sub {
+  font-size: .8rem;
+  color: var(--cinza-texto);
+  white-space: nowrap;
+}
+
+/* Menu: no celular abre em lista vertical, sem rolagem lateral */
+.menu-botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  background: none;
+  border: 0;
+  font: 600 .95rem var(--fonte-texto);
+  color: var(--preto);
+  cursor: pointer;
+}
+.menu-botao__icone,
+.menu-botao__icone::before {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--preto);
+  transition: transform .2s;
+}
+.menu-botao__icone { position: relative; transform: translateY(-3px); }
+.menu-botao__icone::before { content: ""; position: absolute; top: 6px; }
+.menu-botao[aria-expanded="true"] .menu-botao__icone { transform: rotate(45deg); }
+.menu-botao[aria-expanded="true"] .menu-botao__icone::before { transform: translateY(-6px) rotate(-90deg); }
+
+.menu ul { list-style: none; margin: 0; padding: 0; }
+.menu a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media (max-width: 859px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--branco);
+    border-bottom: 2px solid var(--preto);
+  }
+  .menu.aberto { display: block; }
+  .menu li { border-top: 1px solid var(--cinza-linha); }
+  .menu a {
+    display: block;
+    padding: 16px var(--margem);
+    font-size: 1.1rem;
+  }
+  .menu a:hover { background: var(--amarelo); }
+  .logo__sub { font-size: .75rem; }
+}
+
+@media (min-width: 860px) {
+  .menu-botao { display: none; }
+  .menu ul { display: flex; gap: 32px; }
+  .menu a {
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .menu a:hover { border-bottom-color: var(--preto); }
+}
+
+/* 2. Apresentação -------------------------------------------------------- */
+.apresentacao {
+  padding: clamp(64px, 11vw, 160px) 0 var(--secao);
+}
+
+.apresentacao__titulo {
+  font-size: clamp(2.6rem, 7.4vw, 6.2rem);
+  max-width: 13ch;
+}
+
+.apresentacao__texto {
+  margin: 32px 0 40px;
+  max-width: 34rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: var(--cinza-texto);
+}
