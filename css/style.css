@@ -95,6 +95,12 @@ a { color: inherit; }
   -webkit-box-decoration-break: clone;
 }
 
+/* A pontuação logo depois do destaque encosta no texto, sem o vão do padding */
+.destaque { margin-right: -.12em; }
+
+/* Palavras com hífen que não devem quebrar no fim da linha (ex.: "e-mail") */
+.sem-quebra { white-space: nowrap; }
+
 /* 1. Cabeçalho ----------------------------------------------------------- */
 .cabecalho {
   position: sticky;
