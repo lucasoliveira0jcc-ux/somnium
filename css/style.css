@@ -115,6 +115,9 @@ a { color: inherit; }
   display: flex;
   align-items: baseline;
   gap: 10px;
+  /* área de toque de 44px sem mudar a altura visual do cabeçalho */
+  padding: 9px 0;
+  margin: -9px 0;
   text-decoration: none;
 }
 .logo__nome {
@@ -135,7 +138,10 @@ a { color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 0;
+  /* área de toque de 44px; a margem negativa mantém o alinhamento à direita */
+  min-height: 44px;
+  padding: 0 12px;
+  margin-right: -12px;
   background: none;
   border: 0;
   font: 600 .95rem var(--fonte-texto);
@@ -180,6 +186,11 @@ a { color: inherit; }
   }
   .menu a:hover { background: var(--cor-destaque); }
   .logo__sub { font-size: .75rem; }
+}
+
+/* Telas muito estreitas: o subtítulo encostaria no botão do menu */
+@media (max-width: 359px) {
+  .logo__sub { display: none; }
 }
 
 @media (min-width: 860px) {
@@ -443,6 +454,12 @@ a { color: inherit; }
 }
 .contato__lista dt { color: var(--cor-inverso-rotulo); }
 .contato__lista dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+/* área de toque de 44px no link do e-mail, sem mudar a altura da linha */
+.contato__lista dd a {
+  display: inline-block;
+  padding: 12px 0;
+  margin: -12px 0;
+}
 .contato__lista a[href] { text-decoration-color: var(--cor-destaque); text-underline-offset: 4px; }
 .contato__lista a[href]:hover { color: var(--cor-destaque); }
 .contato :focus-visible { outline-color: var(--cor-destaque); }
