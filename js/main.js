@@ -59,6 +59,47 @@
     lista.appendChild(cartao);
   });
 
+  /* Contato e cidade -----------------------------------------------------
+     Um valor ainda não preenchido (com [SUBSTITUIR] ou [CIDADE]) aparece
+     como texto, sem link. */
+  function pendente(valor) {
+    return !valor || /\[(SUBSTITUIR|CIDADE)\]/.test(valor);
+  }
+
+  var contato = config.contato || {};
+
+  document.querySelectorAll('[data-config="cidade"]').forEach(function (no) {
+    no.textContent = config.cidade || "[CIDADE]";
+  });
+
+  var whatsapp = document.getElementById("contato-whatsapp");
+  var numero = String(contato.whatsapp || "").replace(/\D/g, "");
+  if (!pendente(contato.whatsapp) && numero) {
+    whatsapp.href = "https://wa.me/" + numero +
+      (contato.mensagemWhatsapp ? "?text=" + encodeURIComponent(contato.mensagemWhatsapp) : "");
+    whatsapp.target = "_blank";
+    whatsapp.rel = "noopener";
+  } else {
+    whatsapp.classList.add("botao--pendente");
+    whatsapp.textContent = "Chamar no WhatsApp [SUBSTITUIR]";
+  }
+
+  var email = document.getElementById("contato-email");
+  email.textContent = contato.email || "[SUBSTITUIR]";
+  if (!pendente(contato.email)) email.href = "mailto:" + contato.email;
+
+  var instagram = document.getElementById("contato-instagram");
+  var perfil = String(contato.instagram || "").replace(/^@/, "");
+  instagram.textContent = pendente(perfil) ? "[SUBSTITUIR]" : "@" + perfil;
+  if (!pendente(perfil)) {
+    instagram.href = "https://www.instagram.com/" + encodeURIComponent(perfil) + "/";
+    instagram.target = "_blank";
+    instagram.rel = "noopener";
+  }
+
+  /* Ano atual no rodapé */
+  document.getElementById("ano").textContent = new Date().getFullYear();
+
   /* Menu do celular ------------------------------------------------------ */
   var botao = document.querySelector(".menu-botao");
   var menu = document.getElementById("menu");

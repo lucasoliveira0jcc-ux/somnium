@@ -438,3 +438,76 @@ a { color: inherit; }
   font-family: ui-monospace, Consolas, monospace;
   font-size: .85em;
 }
+
+/* 7. Contato (bloco preto) ----------------------------------------------- */
+.contato {
+  background: var(--preto);
+  color: var(--branco);
+  padding: var(--secao) 0;
+}
+
+.contato__grade { display: grid; gap: 48px; }
+
+.contato__titulo { font-size: clamp(2.3rem, 5.6vw, 4.4rem); max-width: 14ch; margin-top: 16px; }
+
+.contato__texto {
+  margin-top: 24px;
+  max-width: 32rem;
+  color: #CFCFC8;
+  font-size: 1.1rem;
+}
+
+.contato__canais { display: grid; gap: 40px; align-content: start; }
+
+.contato__whatsapp {
+  justify-self: start;
+  font-size: 1.15rem;
+  padding: 20px 32px;
+  border-color: var(--amarelo);
+}
+.contato__whatsapp:hover { background: var(--branco); color: var(--preto); border-color: var(--branco); }
+
+/* Botão sem link enquanto o número não for informado */
+.botao--pendente { cursor: default; }
+.botao--pendente:hover { transform: none; background: var(--amarelo); color: var(--preto); border-color: var(--amarelo); }
+
+.contato__lista { margin: 0; display: grid; gap: 0; border-top: 1px solid #3A3A36; }
+.contato__lista > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid #3A3A36;
+}
+.contato__lista dt { color: #A8A8A0; }
+.contato__lista dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.contato__lista a[href] { text-decoration-color: var(--amarelo); text-underline-offset: 4px; }
+.contato__lista a[href]:hover { color: var(--amarelo); }
+.contato :focus-visible { outline-color: var(--amarelo); }
+
+@media (min-width: 900px) {
+  .contato__grade { grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
+}
+
+/* 8. Rodapé -------------------------------------------------------------- */
+.rodape {
+  border-top: 6px solid var(--amarelo);
+  padding: 28px 0;
+  font-size: .95rem;
+}
+
+.rodape__linha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px 24px;
+}
+
+.rodape__logo {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+}
