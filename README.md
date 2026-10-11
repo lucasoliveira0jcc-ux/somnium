@@ -1,6 +1,6 @@
 # somnium
 
-Site da Somnium: sites e sistemas para pequenos negócios.
+Site da Somnium: sites e sistemas para sua empresa.
 
 Site estático (HTML, CSS e JavaScript simples), sem framework e sem etapa de
 build. Publicado no GitHub Pages em

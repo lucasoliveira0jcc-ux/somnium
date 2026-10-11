@@ -35,7 +35,7 @@
     var imagem = el("img", "projeto__imagem");
     imagem.src = item.imagem;
     imagem.alt = "Imagem provisória, sem conteúdo real, no lugar da captura de tela da demonstração de " +
-      item.segmento.toLowerCase() + " (negócio fictício)";
+      item.segmento.toLowerCase() + " (empresa fictícia)";
     imagem.loading = "lazy";
     imagem.width = 800;
     imagem.height = 500;
@@ -45,7 +45,7 @@
     corpo.appendChild(el("h3", "projeto__titulo", item.segmento));
     corpo.appendChild(el("p", "projeto__descricao", item.descricao));
     corpo.appendChild(el("p", "projeto__legenda",
-      "Exemplo com negócio e nome fictícios. Não é um cliente real."));
+      "Exemplo com empresa e nome fictícios. Não é um cliente real."));
 
     var rodape = el("div", "projeto__rodape");
     if (publicada) {
