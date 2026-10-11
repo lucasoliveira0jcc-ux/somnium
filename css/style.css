@@ -44,6 +44,12 @@ a { color: inherit; }
 
 :focus-visible { outline: 3px solid var(--cor-texto); outline-offset: 3px; }
 
+/* O <main> recebe foco pelo link "Pular para o conteúdo"; não precisa de contorno */
+main:focus { outline: none; }
+
+/* Seleção de texto nas cores da marca */
+::selection { background: var(--cor-destaque); color: var(--cor-texto); }
+
 .container {
   width: 100%;
   max-width: var(--largura);
