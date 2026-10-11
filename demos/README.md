@@ -30,8 +30,10 @@ demo, copie do modelo:
 
 Se a demo tiver um cabeçalho fixo, use `top: var(--faixa-demo-altura)` nele.
 
-O arquivo `.nojekyll` na raiz do site é necessário para o GitHub Pages
-publicar pastas que começam com `_`. Não o remova.
+O `_modelo` fica fora do site publicado: o GitHub Pages ignora pastas que
+começam com `_`. Ele serve só como base local. Por isso, o nome da pasta de
+cada demo real não pode começar com `_`, e o site não deve ter um arquivo
+`.nojekyll`.
 
 ## Como publicar uma demo
 
