@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[EXEMPLO] Modelo de demonstração | Somnium</title>
+  <meta name="description" content="Página modelo, usada como base para as demonstrações do portfólio da Somnium.">
+  <!-- Base interna: não deve aparecer em buscadores. Retire esta linha nas demos reais. -->
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;600&display=swap">
+
+  <!-- Estilo neutro só para este modelo. Cada demo terá o próprio. -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      font-family: var(--fonte-texto);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    .modelo {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+    .modelo h1 {
+      margin: 0 0 20px;
+      font-family: var(--fonte-titulo);
+      font-weight: 800;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .modelo p { margin: 0; color: var(--cor-texto-suave); }
+  </style>
+
+  <!-- Estilos da faixa (copie estas duas linhas para cada demo, depois dos estilos dela) -->
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/faixa-demo.css">
+</head>
+<body>
+
+  <!-- ===== FAIXA "VOLTAR AO PORTFÓLIO": copie daqui ===== -->
+  <div class="faixa-demo" role="note" aria-label="Aviso de demonstração">
+    <span class="faixa-demo__aviso">Você está vendo um exemplo.</span>
+    <a class="faixa-demo__link" href="../../">Voltar ao portfólio</a>
+  </div>
+  <!-- ===== FAIXA "VOLTAR AO PORTFÓLIO": até aqui ===== -->
+
+  <main class="modelo">
+    <h1>[EXEMPLO] Título da demonstração</h1>
+    <p>
+      [EXEMPLO] Parágrafo de apresentação do negócio fictício. Substitua este
+      texto pelo conteúdo da demo e mantenha claro, na página, que se trata
+      de um exemplo.
+    </p>
+  </main>
+
+</body>
+</html>
