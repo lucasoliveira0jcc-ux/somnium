@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Somnium | sites e sistemas para pequenos negócios</title>
+  <meta name="description" content="A Somnium cria landing pages, sites institucionais, lojas virtuais e sistemas com automações para pequenos negócios.">
+
+  <!-- Open Graph (prévia ao compartilhar o link) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Somnium">
+  <meta property="og:title" content="Somnium | sites e sistemas para pequenos negócios">
+  <meta property="og:description" content="Landing pages, sites institucionais, lojas virtuais e sistemas com automações para pequenos negócios.">
+  <meta property="og:url" content="https://lucasoliveira0jcc-ux.github.io/somnium/">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- 1. CABEÇALHO -->
+  <header class="cabecalho">
+    <div class="container cabecalho__linha">
+      <a class="logo" href="#topo" aria-label="Somnium, início">
+        <span class="logo__nome">somnium</span>
+        <span class="logo__sub">sites e sistemas</span>
+      </a>
+
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-botao__texto">Menu</span>
+        <span class="menu-botao__icone" aria-hidden="true"></span>
+      </button>
+
+      <nav class="menu" id="menu" aria-label="Principal">
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- 2. APRESENTAÇÃO -->
+    <section class="apresentacao" id="topo" aria-labelledby="apresentacao-titulo">
+      <div class="container">
+        <h1 class="apresentacao__titulo" id="apresentacao-titulo">
+          Seu negócio <span class="destaque">na internet</span>, do jeito que ele é.
+        </h1>
+        <p class="apresentacao__texto">
+          Crio sites e sistemas para pequenos negócios: páginas claras, rápidas
+          no celular e fáceis de manter, feitas para o seu cliente encontrar você
+          e entrar em contato.
+        </p>
+        <div class="botoes">
+          <a class="botao botao--amarelo" href="#portfolio">Ver portfólio</a>
+          <a class="botao botao--contorno" href="#contato">Falar comigo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERVIÇOS -->
+    <section class="secao" id="servicos" aria-labelledby="servicos-titulo">
+      <div class="container">
+        <div class="secao__topo">
+          <p class="rotulo">Serviços</p>
+          <h2 class="secao__titulo" id="servicos-titulo">O que eu faço</h2>
+        </div>
+
+        <ul class="servicos">
+          <li class="servico">
+            <h3 class="servico__titulo">Landing page</h3>
+            <p>Uma página única e direta, feita para apresentar uma oferta e levar o visitante a falar com você.</p>
+          </li>
+          <li class="servico">
+            <h3 class="servico__titulo">Site institucional</h3>
+            <p>Algumas páginas para contar quem você é, o que faz e onde o cliente encontra o seu negócio.</p>
+          </li>
+          <li class="servico">
+            <h3 class="servico__titulo">Loja virtual</h3>
+            <p>Catálogo de produtos com carrinho e pedido, para vender pela internet sem complicação.</p>
+          </li>
+          <li class="servico">
+            <h3 class="servico__titulo">Sistema com automações</h3>
+            <p>Ferramentas sob medida para organizar agendamentos, cadastros e tarefas repetitivas do dia a dia.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. PORTFÓLIO
+         Os cartões são montados por js/main.js a partir da lista
+         "portfolio" em config.js. -->
+    <section class="secao secao--cinza" id="portfolio" aria-labelledby="portfolio-titulo">
+      <div class="container">
+        <div class="secao__topo">
+          <p class="rotulo">Portfólio</p>
+          <h2 class="secao__titulo" id="portfolio-titulo">Exemplos para quatro tipos de negócio</h2>
+          <p class="secao__intro">
+            Demonstrações criadas para mostrar como um site pode funcionar em
+            cada segmento. Os negócios e os nomes usados são fictícios.
+          </p>
+        </div>
+
+        <ul class="portfolio" id="lista-portfolio"></ul>
+        <noscript><p>Ative o JavaScript para ver os exemplos do portfólio.</p></noscript>
+      </div>
+    </section>
+
+    <!-- 5. COMO FUNCIONA -->
+    <section class="secao" id="como-funciona" aria-labelledby="como-funciona-titulo">
+      <div class="container">
+        <div class="secao__topo">
+          <p class="rotulo">Como funciona</p>
+          <h2 class="secao__titulo" id="como-funciona-titulo">Do primeiro papo ao site no ar</h2>
+        </div>
+
+        <ol class="passos">
+          <li class="passo">
+            <h3 class="passo__titulo">Conversa</h3>
+            <p>Um papo sem compromisso para entender o seu negócio e o que você precisa.</p>
+          </li>
+          <li class="passo">
+            <h3 class="passo__titulo">Briefing</h3>
+            <p>Reunimos textos, fotos, referências e objetivos para orientar o projeto.</p>
+          </li>
+          <li class="passo">
+            <h3 class="passo__titulo">Proposta</h3>
+            <p>Você recebe uma proposta com tudo o que vai ser feito, por escrito.</p>
+          </li>
+          <li class="passo">
+            <h3 class="passo__titulo">Criação</h3>
+            <p>Desenvolvo o site ou sistema e mostro o andamento ao longo do caminho.</p>
+          </li>
+          <li class="passo">
+            <h3 class="passo__titulo">Revisão e publicação</h3>
+            <p>Ajustamos os detalhes juntos e colocamos tudo no ar.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6. CONTATO
+         Número, e-mail e cidade vêm de config.js.
+         Enquanto houver [SUBSTITUIR], os itens aparecem sem link. -->
+    <section class="contato" id="contato" aria-labelledby="contato-titulo">
+      <div class="container contato__grade">
+        <div>
+          <p class="rotulo">Contato</p>
+          <h2 class="contato__titulo" id="contato-titulo">Vamos conversar sobre o seu projeto?</h2>
+          <p class="contato__texto">
+            Me chame no WhatsApp ou mande um e-mail contando um pouco sobre o seu
+            negócio. Estou em <span data-config="cidade">Fortaleza</span>.
+          </p>
+        </div>
+
+        <div class="contato__canais">
+          <a class="botao botao--amarelo contato__whatsapp" id="contato-whatsapp">Chamar no WhatsApp</a>
+
+          <dl class="contato__lista">
+            <div>
+              <dt>E-mail</dt>
+              <dd><a id="contato-email" href="mailto:lucasoliveira0jcc@gmail.com">lucasoliveira0jcc@gmail.com</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 7. RODAPÉ -->
+  <footer class="rodape">
+    <div class="container rodape__linha">
+      <span class="rodape__logo">somnium</span>
+      <span><span data-config="cidade">Fortaleza</span> · © <span id="ano">2026</span></span>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
