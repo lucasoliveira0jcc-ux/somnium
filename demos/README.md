@@ -19,7 +19,7 @@ própria página, que são exemplos.
 
 `demos/_modelo/index.html` é a base para começar cada demo. Ela já traz a
 faixa preta fixa no topo ("Você está vendo um exemplo. Voltar ao portfólio"),
-que volta para a página inicial com `../../`.
+que volta para a seção de portfólio da página inicial com `../../#portfolio`.
 
 O `_modelo` não aparece no portfólio nem no menu. Para usar a faixa numa
 demo, copie do modelo:
