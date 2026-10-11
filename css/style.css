@@ -359,12 +359,11 @@ a { color: inherit; }
   border-bottom: 2px solid var(--cor-texto);
 }
 
-.projeto--publicada { transition: transform .15s, box-shadow .15s; }
-.projeto--publicada:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 4px 4px 0 var(--cor-texto);
-}
-.projeto--publicada:hover .projeto__acao { background: var(--cor-destaque); }
+/* Demo publicada: no hover ou foco, a área de texto vira um bloco amarelo
+   com texto escuro (sem sombra nem cartão "flutuando") */
+.projeto--publicada .projeto__corpo { transition: background-color .15s; }
+.projeto--publicada:hover .projeto__corpo,
+.projeto__link:focus-visible .projeto__corpo { background: var(--cor-destaque); }
 
 /* 5. Como funciona ------------------------------------------------------- */
 .passos {
@@ -506,6 +505,5 @@ a { color: inherit; }
   *::after {
     transition-duration: 0.01ms !important;
   }
-  .botao:hover,
-  .projeto--publicada:hover { transform: none; }
+  .botao:hover { transform: none; }
 }
