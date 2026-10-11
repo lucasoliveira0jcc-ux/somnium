@@ -217,3 +217,59 @@ a { color: inherit; }
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   color: var(--cinza-texto);
 }
+
+/* Seções (estrutura comum) ----------------------------------------------- */
+.secao { padding: var(--secao) 0; }
+.secao--cinza { background: var(--cinza); }
+
+.secao__topo {
+  display: grid;
+  gap: 16px;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.rotulo {
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.secao__titulo { font-size: clamp(2.1rem, 5vw, 3.8rem); max-width: 18ch; }
+
+.secao__intro {
+  max-width: 36rem;
+  color: var(--cinza-texto);
+  font-size: 1.05rem;
+}
+
+/* 3. Serviços ------------------------------------------------------------ */
+.servicos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  border-top: 2px solid var(--preto);
+}
+
+.servico {
+  padding: 32px 0 36px;
+  border-bottom: 1px solid var(--cinza-linha);
+}
+
+.servico__titulo {
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  margin-bottom: 14px;
+}
+
+.servico p { color: var(--cinza-texto); max-width: 30rem; }
+
+@media (min-width: 700px) {
+  .servicos { grid-template-columns: 1fr 1fr; }
+  .servico { padding: 40px 40px 48px 0; }
+  .servico:nth-child(even) {
+    padding-left: 40px;
+    padding-right: 0;
+    border-left: 1px solid var(--cinza-linha);
+  }
+}
