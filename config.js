@@ -13,22 +13,19 @@ window.SOMNIUM_CONFIG = {
 
   /* Cidade que aparece no rodapé e na seção de contato.
      Exemplo: "Campinas, SP" */
-  cidade: "[CIDADE]",
+  cidade: "Fortaleza",
 
   contato: {
 
     /* WhatsApp: só números, com código do país (55) e DDD.
        Exemplo: "5519999999999" */
-    whatsapp: "[SUBSTITUIR]",
+    whatsapp: "5585921847089",
 
     /* Mensagem que já vem escrita quando a pessoa abre o WhatsApp. */
-    mensagemWhatsapp: "Olá! Vim pelo site da Somnium e quero conversar sobre um projeto.",
+    mensagemWhatsapp: "Oi, Lucas! Vi o site da Somnium e queria conversar sobre um projeto.",
 
     /* E-mail de contato. Exemplo: "contato@somnium.com.br" */
-    email: "[SUBSTITUIR]",
-
-    /* Perfil do Instagram, sem o @. Exemplo: "somnium.sites" */
-    instagram: "[SUBSTITUIR]"
+    email: "lucasoliveira0jcc@gmail.com"
   },
 
   /* PORTFÓLIO
