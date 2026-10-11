@@ -44,6 +44,12 @@ a { color: inherit; }
 
 :focus-visible { outline: 3px solid var(--cor-texto); outline-offset: 3px; }
 
+/* O <main> recebe foco pelo link "Pular para o conteúdo"; não precisa de contorno */
+main:focus { outline: none; }
+
+/* Seleção de texto nas cores da marca */
+::selection { background: var(--cor-destaque); color: var(--cor-texto); }
+
 .container {
   width: 100%;
   max-width: var(--largura);
@@ -81,8 +87,8 @@ a { color: inherit; }
 }
 .botao:hover { transform: translateY(-2px); }
 
-.botao--cor-destaque { background: var(--cor-destaque); color: var(--cor-texto); }
-.botao--cor-destaque:hover { background: var(--cor-texto); color: var(--cor-destaque); }
+.botao--amarelo { background: var(--cor-destaque); color: var(--cor-texto); }
+.botao--amarelo:hover { background: var(--cor-texto); color: var(--cor-destaque); }
 
 .botao--contorno { background: transparent; color: var(--cor-texto); }
 .botao--contorno:hover { background: var(--cor-texto); color: var(--cor-fundo); }
@@ -94,6 +100,12 @@ a { color: inherit; }
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+
+/* A pontuação logo depois do destaque encosta no texto, sem o vão do padding */
+.destaque { margin-right: -.12em; }
+
+/* Palavras com hífen que não devem quebrar no fim da linha (ex.: "e-mail") */
+.sem-quebra { white-space: nowrap; }
 
 /* 1. Cabeçalho ----------------------------------------------------------- */
 .cabecalho {
@@ -115,6 +127,9 @@ a { color: inherit; }
   display: flex;
   align-items: baseline;
   gap: 10px;
+  /* área de toque de 44px sem mudar a altura visual do cabeçalho */
+  padding: 9px 0;
+  margin: -9px 0;
   text-decoration: none;
 }
 .logo__nome {
@@ -135,7 +150,10 @@ a { color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 0;
+  /* área de toque de 44px; a margem negativa mantém o alinhamento à direita */
+  min-height: 44px;
+  padding: 0 12px;
+  margin-right: -12px;
   background: none;
   border: 0;
   font: 600 .95rem var(--fonte-texto);
@@ -180,6 +198,11 @@ a { color: inherit; }
   }
   .menu a:hover { background: var(--cor-destaque); }
   .logo__sub { font-size: .75rem; }
+}
+
+/* Telas muito estreitas: o subtítulo encostaria no botão do menu */
+@media (max-width: 359px) {
+  .logo__sub { display: none; }
 }
 
 @media (min-width: 860px) {
@@ -342,12 +365,11 @@ a { color: inherit; }
   border-bottom: 2px solid var(--cor-texto);
 }
 
-.projeto--publicada { transition: transform .15s, box-shadow .15s; }
-.projeto--publicada:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 4px 4px 0 var(--cor-texto);
-}
-.projeto--publicada:hover .projeto__acao { background: var(--cor-destaque); }
+/* Demo publicada: no hover ou foco, a área de texto vira um bloco amarelo
+   com texto escuro (sem sombra nem cartão "flutuando") */
+.projeto--publicada .projeto__corpo { transition: background-color .15s; }
+.projeto--publicada:hover .projeto__corpo,
+.projeto__link:focus-visible .projeto__corpo { background: var(--cor-destaque); }
 
 /* 5. Como funciona ------------------------------------------------------- */
 .passos {
@@ -443,6 +465,12 @@ a { color: inherit; }
 }
 .contato__lista dt { color: var(--cor-inverso-rotulo); }
 .contato__lista dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+/* área de toque de 44px no link do e-mail, sem mudar a altura da linha */
+.contato__lista dd a {
+  display: inline-block;
+  padding: 12px 0;
+  margin: -12px 0;
+}
 .contato__lista a[href] { text-decoration-color: var(--cor-destaque); text-underline-offset: 4px; }
 .contato__lista a[href]:hover { color: var(--cor-destaque); }
 .contato :focus-visible { outline-color: var(--cor-destaque); }
@@ -471,4 +499,17 @@ a { color: inherit; }
   font-weight: 800;
   font-size: 1.25rem;
   letter-spacing: -0.03em;
+}
+
+/* Movimento reduzido ------------------------------------------------------
+   Quem pede menos movimento no sistema não recebe rolagem suave nem
+   deslocamentos no hover. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+  .botao:hover { transform: none; }
 }

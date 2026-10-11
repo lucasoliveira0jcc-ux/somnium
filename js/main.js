@@ -111,7 +111,29 @@
     if (evento.target.closest("a")) fecharMenu();
   });
 
+  var cabecalho = document.querySelector(".cabecalho");
+
+  function menuAberto() {
+    return botao.getAttribute("aria-expanded") === "true";
+  }
+
+  /* Esc fecha o menu e devolve o foco ao botão */
   document.addEventListener("keydown", function (evento) {
-    if (evento.key === "Escape") fecharMenu();
+    if (evento.key !== "Escape" || !menuAberto()) return;
+    var focoNoMenu = menu.contains(document.activeElement);
+    fecharMenu();
+    if (focoNoMenu) botao.focus();
+  });
+
+  /* Toque ou clique fora do cabeçalho fecha o menu */
+  document.addEventListener("click", function (evento) {
+    if (menuAberto() && !cabecalho.contains(evento.target)) fecharMenu();
+  });
+
+  /* Foco do teclado saindo do cabeçalho fecha o menu */
+  cabecalho.addEventListener("focusout", function (evento) {
+    if (menuAberto() && evento.relatedTarget && !cabecalho.contains(evento.relatedTarget)) {
+      fecharMenu();
+    }
   });
 })();
