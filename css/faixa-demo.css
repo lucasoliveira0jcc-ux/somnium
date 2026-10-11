@@ -1,0 +1,79 @@
+/* ==========================================================================
+   SOMNIUM | faixa "voltar ao portfólio" das demos
+   --------------------------------------------------------------------------
+   Faixa fina, fixa no topo, que avisa que a página é um exemplo e leva de
+   volta à página inicial. Usa as variáveis de css/tokens.css.
+
+   Como usar numa demo (demos/<nicho>/index.html):
+   1. No <head>, depois dos estilos da própria demo:
+        <link rel="stylesheet" href="../../css/tokens.css">
+        <link rel="stylesheet" href="../../css/faixa-demo.css">
+   2. Logo depois de <body>, cole o trecho marcado em demos/_modelo/index.html.
+
+   A faixa reserva o próprio espaço no topo (padding-top no body), então não
+   cobre o conteúdo. Se a demo tiver um cabeçalho fixo ou "sticky", use
+   top: var(--faixa-demo-altura) nele para que fique logo abaixo da faixa.
+   ========================================================================== */
+
+:root {
+  --faixa-demo-altura: 36px;
+}
+
+body {
+  padding-top: var(--faixa-demo-altura);
+}
+
+html {
+  scroll-padding-top: var(--faixa-demo-altura);
+}
+
+.faixa-demo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--faixa-demo-altura);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 16px;
+  background: var(--cor-texto);
+  color: var(--cor-fundo);
+  font-family: var(--fonte-texto);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.faixa-demo__aviso {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.faixa-demo__link {
+  flex-shrink: 0;
+  color: var(--cor-fundo);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--cor-destaque);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.faixa-demo__link:hover {
+  color: var(--cor-destaque);
+}
+
+.faixa-demo__link:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  :root { --faixa-demo-altura: 40px; }
+  .faixa-demo { font-size: 14px; }
+}
