@@ -1,0 +1,32 @@
+/* ==========================================================================
+   SOMNIUM | tokens de identidade visual
+   --------------------------------------------------------------------------
+   Todas as cores e fontes do site ficam aqui. Para trocar a identidade
+   visual, altere só este arquivo: css/style.css e as demos usam apenas
+   estas variáveis.
+
+   As fontes são carregadas pelo Google Fonts no <head> de cada página.
+   Se trocar a família aqui, troque também o link do Google Fonts.
+   ========================================================================== */
+
+:root {
+  /* Cores principais ----------------------------------------------------- */
+  --cor-destaque: #FFD400;    /* amarelo: botões, faixas, fundos com texto escuro.
+                                 Nunca em texto pequeno sobre fundo claro. */
+  --cor-texto: #111111;       /* preto: textos e blocos de contraste */
+  --cor-fundo: #FFFFFF;       /* branco: fundo principal */
+  --cor-secundaria: #F4F4F1;  /* cinza claro: fundo das seções secundárias */
+
+  /* Cores de apoio (tons derivados das principais) ----------------------- */
+  --cor-linha: #DADAD4;         /* linhas e divisórias sobre fundo claro */
+  --cor-texto-suave: #55554F;   /* textos de apoio sobre fundo claro */
+
+  /* Sobre fundo escuro (bloco de contato e faixa das demos) */
+  --cor-inverso-texto-suave: #CFCFC8;
+  --cor-inverso-rotulo: #A8A8A0;
+  --cor-inverso-linha: #3A3A36;
+
+  /* Fontes --------------------------------------------------------------- */
+  --fonte-titulo: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --fonte-texto: "Inter", "Helvetica Neue", Arial, sans-serif;
+}

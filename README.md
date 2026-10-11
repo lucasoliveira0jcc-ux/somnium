@@ -11,7 +11,7 @@ build. Publicado no GitHub Pages em
 ```
 index.html   página inicial
 config.js    contato, cidade e caminhos do portfólio (edite aqui)
-css/         estilos
+css/         estilos (cores e fontes em css/tokens.css)
 js/          scripts da página
 img/         imagens e favicon
 demos/       demonstrações do portfólio (veja demos/README.md)
