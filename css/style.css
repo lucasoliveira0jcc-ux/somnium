@@ -489,3 +489,17 @@ a { color: inherit; }
   font-size: 1.25rem;
   letter-spacing: -0.03em;
 }
+
+/* Movimento reduzido ------------------------------------------------------
+   Quem pede menos movimento no sistema não recebe rolagem suave nem
+   deslocamentos no hover. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+  .botao:hover,
+  .projeto--publicada:hover { transform: none; }
+}
