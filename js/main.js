@@ -86,16 +86,8 @@
 
   var email = document.getElementById("contato-email");
   email.textContent = contato.email || "[SUBSTITUIR]";
-  if (!pendente(contato.email)) email.href = "mailto:" + contato.email;
-
-  var instagram = document.getElementById("contato-instagram");
-  var perfil = String(contato.instagram || "").replace(/^@/, "");
-  instagram.textContent = pendente(perfil) ? "[SUBSTITUIR]" : "@" + perfil;
-  if (!pendente(perfil)) {
-    instagram.href = "https://www.instagram.com/" + encodeURIComponent(perfil) + "/";
-    instagram.target = "_blank";
-    instagram.rel = "noopener";
-  }
+  if (pendente(contato.email)) email.removeAttribute("href");
+  else email.href = "mailto:" + contato.email;
 
   /* Ano atual no rodapé */
   document.getElementById("ano").textContent = new Date().getFullYear();
