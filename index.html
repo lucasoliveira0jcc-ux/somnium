@@ -3,6 +3,36 @@
 <head>
   <meta charset="utf-8">
   <title>somnium · sites e sistemas em Fortaleza</title>
+  <!-- Estatísticas de visitas e cliques (Vercel Web Analytics) -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+    /* Registra os cliques em links e botões. Escuta na window porque o
+       empacotador troca o DOM da página depois que ela carrega. */
+    window.addEventListener('click', function (e) {
+      try {
+        var a = e.target && e.target.closest && e.target.closest('a');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        var nome = null, dados = {};
+        if (href.indexOf('wa.me') !== -1) {
+          nome = 'clique_whatsapp';
+          dados.local = a.getAttribute('aria-label') ? 'botao_flutuante' : 'secao_contato';
+        } else if (href.indexOf('mailto:') === 0) {
+          nome = 'clique_email';
+        } else if (href.indexOf('tel:') === 0) {
+          nome = 'clique_telefone';
+        } else if (href.charAt(0) === '#') {
+          nome = 'clique_link_interno';
+          dados.destino = href;
+          dados.texto = (a.textContent || '').trim().slice(0, 40);
+        }
+        if (nome) window.va('event', { name: nome, data: dados });
+      } catch (_) {}
+    }, true);
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
